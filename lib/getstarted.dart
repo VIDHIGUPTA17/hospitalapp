@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hospitalapp/Login.dart';
 
 class GetStart extends StatefulWidget {
   const GetStart({super.key});
@@ -51,8 +52,11 @@ class _GetStartState extends State<GetStart> {
             ),
           ),
           ElevatedButton(
-            onPressed: () {},
-            child: Row(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const Login()));
+            },
+            child: const Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -70,26 +74,21 @@ class _GetStartState extends State<GetStart> {
           ),
           ElevatedButton(
             onPressed: () {},
-            child: Row(
+            child: const Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(padding: EdgeInsets.all(10)),
                 Icon(Icons.mail),
-                // SizedBox(
-                //   width: 20,
-                // ),
                 Text('Continue with Phone'),
-                // SizedBox(
-                //   width: 5,
-                // ),
               ],
             ),
           ),
-          SizedBox(
+
+          const SizedBox(
             height: 90,
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text("Already have an account?"),

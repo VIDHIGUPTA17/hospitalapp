@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:hospitalapp/DoctorDetail.dart';
+import 'package:hospitalapp/doctor.dart';
+import 'package:hospitalapp/mainpage.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -81,7 +84,10 @@ class _LoginState extends State<Login> {
         ),
         const SizedBox(height: 10),
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => MainPage()));
+          },
           style: ElevatedButton.styleFrom(
             shape: const StadiumBorder(),
             padding: const EdgeInsets.symmetric(vertical: 16),

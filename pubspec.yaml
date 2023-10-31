@@ -66,6 +66,11 @@ flutter:
    - assests/images/fram.jpeg
    - assests/images/fram1.jpeg
    - assests/images/fram2.jpeg
+   - assests/images/icon1.jpeg
+   - assests/images/icon2.jpeg
+   - assests/images/icon3.jpeg
+   - assests/images/icon4.jpeg
+   - assests/images/bottonicon.jpeg
   
 
   # An image asset can refer to one or more resolution-specific "variants", see
