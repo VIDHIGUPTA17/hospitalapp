@@ -63,6 +63,9 @@ flutter:
    - assests/images/doctor.png
    - assests/images/doctorimg.jpeg
    - assests/images/doctor2.jpeg
+   - assests/images/fram.jpeg
+   - assests/images/fram1.jpeg
+   - assests/images/fram2.jpeg
   
 
   # An image asset can refer to one or more resolution-specific "variants", see

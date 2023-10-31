@@ -1,6 +1,10 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:hospitalapp/DoctorDetail.dart';
+import 'package:hospitalapp/Login.dart';
+import 'package:hospitalapp/doctor.dart';
+import 'package:hospitalapp/getstarted.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,14 +17,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      debugShowCheckedModeBanner: false,
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        debugShowCheckedModeBanner: false,
+        home: GetStart()
+        // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+        );
   }
 }
 
@@ -155,7 +160,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Stack(
                       children: [
                         Container(
-                          color: Color.fromRGBO(238, 246, 247, 1),
+                          color: const Color.fromRGBO(238, 246, 247, 1),
                           child: Image.asset(
                             'assests/images/doctorimg.jpeg',
                             width: 150,
@@ -170,16 +175,16 @@ class _MyHomePageState extends State<MyHomePage> {
                     Column(
                       children: [
                         Container(
-                          child: Text(
+                          child: const Text(
                             "General Practitioner ",
                             style: TextStyle(color: Colors.grey),
                           ),
                         ),
                         Container(
-                          child: Text("Dr. Manas Jha"),
+                          child: const Text("Dr. Manas Jha"),
                         ),
                         Container(
-                          child: Text(
+                          child: const Text(
                             "------------------------------",
                             style: TextStyle(color: Colors.grey),
                           ),
@@ -193,7 +198,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Stack(
                       children: [
                         Container(
-                          color: Color.fromRGBO(238, 246, 247, 1),
+                          color: const Color.fromRGBO(238, 246, 247, 1),
                           child: Image.asset(
                             'assests/images/doctor2.jpeg',
                             width: 150,
@@ -203,21 +208,19 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ],
                     ),
-
-                    // ignore: avoid_unnecessary_containers
                     Column(
                       children: [
                         Container(
-                          child: Text(
+                          child: const Text(
                             "General Practitioner ",
                             style: TextStyle(color: Colors.grey),
                           ),
                         ),
                         Container(
-                          child: Text("Dr. Manas Jha"),
+                          child: const Text("Dr. Manas Jha"),
                         ),
                         Container(
-                          child: Text(
+                          child: const Text(
                             "------------------------------",
                             style: TextStyle(color: Colors.grey),
                           ),
@@ -233,27 +236,44 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       bottomNavigationBar: BottomNavigationBar(
           items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+            const BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home,
+                color: Colors.grey,
+              ),
               label: "HOME",
-              backgroundColor: Colors.blue,
+              backgroundColor: Color.fromRGBO(255, 255, 255, 1),
             ),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.access_alarm),
+            const BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.access_alarm,
+                  color: Colors.grey,
+                ),
                 label: "G",
-                backgroundColor: Colors.blue),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.health_and_safety),
+                backgroundColor: Colors.white),
+            const BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.health_and_safety,
+                  color: Colors.grey,
+                ),
                 label: "H",
-                backgroundColor: Colors.blue),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.interests),
+                backgroundColor: Colors.white),
+            const BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.interests,
+                  color: Colors.grey,
+                ),
                 label: "L",
-                backgroundColor: Colors.blue),
+                backgroundColor: Colors.white),
           ],
-          // currentIndex: 0,
-          // selectedItemColor: Colors.white,
-
+          selectedItemColor: Colors.grey,
+          unselectedItemColor: Colors.grey,
+          selectedLabelStyle: const TextStyle(
+            color: Colors.grey,
+          ),
+          unselectedLabelStyle: const TextStyle(
+            color: Colors.grey,
+          ),
           onTap: (index) {
             switch (index) {
               case 0:
@@ -261,12 +281,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 //     MaterialPageRoute(builder: (context) => FlutterApp()));
                 break;
               case 1:
-                // Navigator.push(
-                //     context, MaterialPageRoute(builder: (context) => about()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Doctors()));
                 break;
               case 2:
-                // Navigator.push(context,
-                //     MaterialPageRoute(builder: (context) => education()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const DoctorDetail()));
                 break;
               case 3:
                 // Navigator.push(context,
